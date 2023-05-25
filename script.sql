@@ -19,8 +19,8 @@ SELECT
     SUM(total) AS total_gain
 FROM sales
 GROUP BY product
-HAVING SUM(total) > 40000
-ORDER BY total_gain DESC
+HAVING SUM(total) > 400
+ORDER BY total_gain DESC;
 
 -------------------------------------------------
 
@@ -33,15 +33,15 @@ and exists (select Eats.name from Eats
             and pizza='pepperoni')
 and exists (select Eats.name from Eats
             where Eats.name=Person.name
-            and pizza='mushroom')
+            and pizza='mushroom');
 
 --------------------------------------------
 
 --- UNION & INTERSECT 
 
-select * from t1
-union
-select * from t2
-intersect
-select * from t3
-order by c1;
+SELECT name FROM eats
+INTERSECT
+SELECT name FROM person
+UNION
+SELECT product FROM sales;
+
