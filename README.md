@@ -82,14 +82,23 @@ With the standard set operations UNION, INTERSECT, and EXCEPT/MINUS, you can com
 - Intersect: Set operation that returns the rows that come from two query expressions .
 - 
 ~~~
-The INTERSECT operator takes precedence over the UNION and EXCEPT operators when a combination of operators is used in the same query. Due to that this query evaluates  the intersection of T2 and T3, and then joins the result with T1:
+The INTERSECT operator takes precedence over the UNION and EXCEPT operators when a combination of operators is used in the same query: 
 
-select * from t1
-union
-select * from t2
-intersect
-select * from t3
-order by c1;
+This query evaluates  the intersection of eats  and person, and then joins the result with sales. It will return the name of the persons and the products.
+
+SELECT name FROM eats
+INTERSECT
+SELECT name FROM person
+UNION
+SELECT product FROM sales;
+
+This oder query evaluates  the intersection of eats  and sales, and then joins the result with persona. It will return only the name of the persons from persona, since there is no common column between the tables eats and sales.
+
+SELECT name FROM eats
+INTERSECT
+SELECT total FROM sales
+UNION
+SELECT name FROM person;
 ~~~
 
 
