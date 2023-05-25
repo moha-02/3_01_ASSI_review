@@ -13,7 +13,8 @@ Project to recover the UNIT 05: Introduction to SQL 2
 
 -MariaDB 
 
-## THREE WAY LOGIC
+## THREE WAY LOGIC 🔂
+
 SQL uses a three-valued logic: besides true and false, the result of logical expressions can also be unknown. SQL's three valued logic is a consequence of supporting null to mark absent data. If a null value affects the result of a logical expression, the result is neither true nor false but unknown.
 IN THIS EXAMPLE WE CAN SEE HOW THE NULL VALUE COULD WORK, IT COULD MEAN:
   - AN ATRIBUTE CAMO HAS CANT BE EMPTY
@@ -37,7 +38,7 @@ A similar case applies to the and operator: and connections are false as soon as
 select (null=1) and (1=0);
 ~~~
 
-## AGGREGATION AND GROUPING
+## AGGREGATION AND GROUPING 🔗
 
 - GROUP BY: groups the result by a specified atribute.
 - ORDER BY ASC(ascending)/DESC(descending): ordwers the result query on an ascending or descending order.
@@ -55,7 +56,7 @@ HAVING SUM(total) > 40000
 ORDER BY total_gain DESC
 ~~~
 
-## SUBQUERYS
+## SUBQUERYS 🔄
 Subqueries (also known as inner queries or nested queries) are a tool for performing multi-step operations.
 
 ~~~
@@ -73,7 +74,7 @@ and exists (select Eats.name from Eats
             and pizza='mushroom')
 ~~~
 
-## UNION & INTERSECT 
+## UNION & INTERSECT ♾
 
 With the standard set operations UNION, INTERSECT, and EXCEPT/MINUS, you can combine the results from two or more SELECT statements to build more complex queries.
 
