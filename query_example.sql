@@ -44,4 +44,10 @@ INTERSECT
 SELECT name FROM person
 UNION
 SELECT product FROM sales;
+---
+SELECT name FROM eats
+INTERSECT
+SELECT total FROM sales
+UNION
+SELECT name FROM person;
 
