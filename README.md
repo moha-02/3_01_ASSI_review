@@ -7,6 +7,7 @@ Project to recover the UNIT 05: Introduction to SQL 2
 - THREE WAY LOGIC
 - AGGREGATION AND GROUPING
 - SUBQUERYS
+- UNION & INTERSECT 
 
 ## TECHNOLOGIES 🛠
 
@@ -57,7 +58,7 @@ ORDER BY total_gain DESC
 ## SUBQUERYS
 Subqueries (also known as inner queries or nested queries) are a tool for performing multi-step operations.
 
-~~~~
+~~~
  In this query we can see 2 subquerys working together, each subquery executes a query, thre result of the subquerys is used to perfomr the MAIN query
  
  In this case we try to fins all the femal that eat pepperoni pizza and mushroom pizza. The first subquery find the ones that east pepperoni pizza and the second query finds the ones that eat musgroom pizza, the MAIN query connects the 2 subquerys throught an and.
@@ -70,7 +71,27 @@ and exists (select Eats.name from Eats
 and exists (select Eats.name from Eats
             where Eats.name=Person.name
             and pizza='mushroom')
-~~~~
+~~~
+
+## UNION & INTERSECT 
+
+With the standard set operations UNION, INTERSECT, and EXCEPT/MINUS, you can combine the results from two or more SELECT statements to build more complex queries.
+
+- Union: Set operation that returns rows from two query expressions, regardless of whether the rows come from one or both expressions.
+- Intersect: Set operation that returns the rows that come from two query expressions .
+- 
+~~~
+The INTERSECT operator takes precedence over the UNION and EXCEPT operators when a combination of operators is used in the same query. Due to that this query evaluates  the intersection of T2 and T3, and then joins the result with T1:
+
+select * from t1
+union
+select * from t2
+intersect
+select * from t3
+order by c1;
+~~~
+
+
 
 
 
